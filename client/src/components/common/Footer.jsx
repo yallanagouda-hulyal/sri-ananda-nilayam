@@ -81,34 +81,32 @@ export default function Footer() {
       {/* Newsletter Strip - Displayed ONLY on the Home page */}
       {isHomePage && (
         <div className="newsletter-strip">
-        <img src="/images/foliage-accent.jpg" alt="" className="newsletter-foliage foliage-left" aria-hidden="true" />
-        <img src="/images/foliage-accent.jpg" alt="" className="newsletter-foliage foliage-right" aria-hidden="true" />
-        <div className="container newsletter-container">
-          <div className="newsletter-text">
-            <span className="newsletter-badge">— STAY INSPIRED —</span>
-            <h3 className="newsletter-title">Subscribe to Our<br />Architecture &amp; Design Journal</h3>
-            <p className="newsletter-desc">Receive exclusive insights on luxury villa trends, construction best practices, and bespoke interior inspiration.</p>
-          </div>
-          <form onSubmit={handleNewsletterSubmit} className="newsletter-form">
-            <div className="newsletter-input-wrap">
-              <Mail size={18} className="newsletter-mail-icon" />
-              <input
-                type="email"
-                placeholder="Enter your email address..."
-                value={newsletterEmail}
-                onChange={(e) => setNewsletterEmail(e.target.value)}
-                className="newsletter-input"
-                required
-              />
-              <button type="submit" disabled={submitting} className="newsletter-submit-btn">
-                <span>{submitting ? 'Subscribing...' : 'Subscribe'}</span>
-                <ArrowRight size={15} />
-              </button>
+          <div className="container newsletter-container">
+            <div className="newsletter-text">
+              <span className="newsletter-badge">— STAY INSPIRED —</span>
+              <h3 className="newsletter-title">Subscribe to Our Architecture &amp; Design Journal</h3>
+              <p className="newsletter-desc">Receive exclusive insights on luxury villa trends, construction best practices, and bespoke interior inspiration.</p>
             </div>
-            <span className="newsletter-disclaimer">We respect your privacy. No spam, ever.</span>
-          </form>
+            <form onSubmit={handleNewsletterSubmit} className="newsletter-form">
+              <div className="newsletter-input-wrap">
+                <Mail size={18} className="newsletter-mail-icon" />
+                <input
+                  type="email"
+                  placeholder="Enter your email address..."
+                  value={newsletterEmail}
+                  onChange={(e) => setNewsletterEmail(e.target.value)}
+                  className="newsletter-input"
+                  required
+                />
+                <button type="submit" disabled={submitting} className="newsletter-submit-btn">
+                  <span>{submitting ? 'Subscribing...' : 'Subscribe'}</span>
+                  <ArrowRight size={15} />
+                </button>
+              </div>
+              <span className="newsletter-disclaimer">We respect your privacy. No spam, ever.</span>
+            </form>
+          </div>
         </div>
-      </div>
       )}
 
       {/* Main Footer Content */}
@@ -228,77 +226,60 @@ export default function Footer() {
         }
 
         .newsletter-strip {
-          background: #FFFFFF;
-          border-bottom: 1px solid rgba(16, 42, 76, 0.08);
-          padding: 4.5rem 0 4rem;
+          background: #FAF7F0;
+          border-top: 1px solid #E5E0D5;
+          border-bottom: 1px solid #E5E0D5;
+          padding: 3.5rem 0;
           position: relative;
-          overflow: hidden;
-        }
-
-        .newsletter-foliage {
-          position: absolute;
-          bottom: -20px;
-          width: 190px;
-          height: 190px;
-          object-fit: contain;
-          pointer-events: none;
-          opacity: 0.95;
-          z-index: 1;
-        }
-
-        .foliage-left {
-          left: -20px;
-          transform: scaleX(1);
-        }
-
-        .foliage-right {
-          right: -20px;
-          transform: scaleX(-1);
         }
 
         .newsletter-container {
           display: flex;
           align-items: center;
           justify-content: space-between;
-          gap: 3rem;
+          gap: 2.5rem;
           flex-wrap: wrap;
-          position: relative;
-          z-index: 2;
         }
 
         .newsletter-text {
-          flex: 1 1 450px;
+          flex: 1 1 380px;
+          min-width: 0;
         }
 
         .newsletter-badge {
           display: inline-block;
-          font-size: 0.75rem;
+          font-size: 0.72rem;
           font-weight: 700;
-          color: #E5AE3F;
+          color: #B47D14;
           letter-spacing: 2px;
           text-transform: uppercase;
-          margin-bottom: 0.75rem;
+          margin-bottom: 0.5rem;
         }
 
         .newsletter-title {
           font-family: var(--font-serif);
-          font-size: clamp(1.85rem, 2.5vw, 2.3rem);
-          color: #102A4C;
+          font-size: clamp(1.5rem, 2.4vw, 2.1rem);
+          color: #07172B;
           line-height: 1.25;
-          margin-bottom: 0.75rem;
+          margin: 0 0 0.5rem 0;
           font-weight: 700;
+          letter-spacing: -0.01em;
+          word-break: break-word;
+          overflow-wrap: break-word;
         }
 
         .newsletter-desc {
-          font-size: 0.95rem;
+          font-size: 0.92rem;
           color: #64748B;
-          margin-bottom: 0;
-          line-height: 1.6;
-          max-width: 480px;
+          margin: 0;
+          line-height: 1.55;
+          max-width: 520px;
         }
 
         .newsletter-form {
-          flex: 1 1 420px;
+          flex: 1 1 360px;
+          min-width: 0;
+          max-width: 500px;
         }
 
         .newsletter-input-wrap {
@@ -306,16 +287,16 @@ export default function Footer() {
           align-items: center;
           gap: 0.5rem;
           background: #FFFFFF;
-          border: 1.5px solid rgba(16, 42, 76, 0.16);
+          border: 1.5px solid #E5E0D5;
           border-radius: 50px;
-          padding: 0.35rem 0.45rem 0.35rem 1.25rem;
-          box-shadow: 0 4px 18px rgba(16, 42, 76, 0.05);
+          padding: 0.35rem 0.45rem 0.35rem 1.15rem;
+          box-shadow: 0 4px 14px rgba(7, 23, 43, 0.04);
           transition: border-color 0.25s ease, box-shadow 0.25s ease;
         }
 
         .newsletter-input-wrap:focus-within {
-          border-color: #E5AE3F;
-          box-shadow: 0 0 0 3px rgba(229, 174, 63, 0.18);
+          border-color: #EAAF35;
+          box-shadow: 0 0 0 3px rgba(234, 175, 53, 0.18);
         }
 
         .newsletter-mail-icon {
@@ -325,11 +306,12 @@ export default function Footer() {
 
         .newsletter-input {
           flex: 1;
+          min-width: 0;
           background: transparent;
           border: none;
-          color: #102A4C;
-          padding: 0.6rem 0.5rem;
-          font-size: 0.95rem;
+          color: #07172B;
+          padding: 0.55rem 0.35rem;
+          font-size: 0.9rem;
           outline: none;
         }
 
@@ -341,29 +323,30 @@ export default function Footer() {
           display: inline-flex;
           align-items: center;
           gap: 0.5rem;
-          background: #E5AE3F;
-          color: #061426;
+          background: #EAAF35;
+          color: #07172B;
           border: none;
           border-radius: 50px;
-          padding: 0.75rem 1.75rem;
+          padding: 0.7rem 1.5rem;
           font-weight: 700;
-          font-size: 0.9rem;
+          font-size: 0.88rem;
           cursor: pointer;
           transition: all 0.25s ease;
           white-space: nowrap;
+          flex-shrink: 0;
         }
 
         .newsletter-submit-btn:hover {
-          background: #F3CA68;
-          transform: translateY(-2px);
-          box-shadow: 0 4px 15px rgba(229, 174, 63, 0.35);
+          background: #F5BF4A;
+          transform: translateY(-1px);
+          box-shadow: 0 4px 15px rgba(234, 175, 53, 0.3);
         }
 
         .newsletter-disclaimer {
           display: block;
-          font-size: 0.8rem;
+          font-size: 0.78rem;
           color: #94A3B8;
-          margin-top: 0.65rem;
+          margin-top: 0.5rem;
         }
 
         .footer-main {
@@ -588,15 +571,65 @@ export default function Footer() {
           }
         }
 
+        @media (max-width: 768px) {
+          .newsletter-strip {
+            padding: 2.75rem 1rem 2.25rem;
+          }
+          .newsletter-container {
+            flex-direction: column;
+            align-items: stretch;
+            gap: 1.5rem;
+          }
+          .newsletter-text {
+            flex: 1 1 auto;
+            max-width: 100%;
+          }
+          .newsletter-title {
+            font-size: 1.45rem;
+            line-height: 1.25;
+          }
+          .newsletter-form {
+            flex: 1 1 auto;
+            max-width: 100%;
+            width: 100%;
+          }
+        }
+
         @media (max-width: 640px) {
           .footer-grid {
             grid-template-columns: 1fr;
           }
-          .newsletter-container {
-            flex-direction: column;
-          }
           .footer-bottom-container {
             flex-direction: column;
+            text-align: center;
+          }
+        }
+
+        @media (max-width: 480px) {
+          .newsletter-strip {
+            padding: 2rem 0.85rem 1.75rem;
+          }
+          .newsletter-title {
+            font-size: 1.25rem;
+          }
+          .newsletter-input-wrap {
+            flex-direction: column;
+            border-radius: 12px;
+            padding: 0.65rem;
+            align-items: stretch;
+            gap: 0.65rem;
+          }
+          .newsletter-input {
+            padding: 0.4rem 0.5rem;
+            font-size: 0.88rem;
+          }
+          .newsletter-submit-btn {
+            width: 100%;
+            justify-content: center;
+            border-radius: 8px;
+            padding: 0.75rem 1rem;
+          }
+          .newsletter-disclaimer {
             text-align: center;
           }
         }
