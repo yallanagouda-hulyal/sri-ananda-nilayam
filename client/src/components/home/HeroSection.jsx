@@ -72,11 +72,10 @@ export default function HeroSection() {
       <div className="container hero-split-container">
         {/* Left Column: Content */}
         <div className="hero-col-content animate-fade-in-up">
-          {/* Eyebrow & Category */}
+          {/* Refined Architectural Eyebrow */}
           <div className="hero-brand-badge">
-            <span className="hero-eyebrow">SRI ANANDA NILAYAM</span>
-            <span className="hero-badge-sep">•</span>
-            <span className="hero-category">DESIGN • CONSTRUCTION • INTERIORS</span>
+            <span className="badge-sparkle-dot">✦</span>
+            <span className="hero-eyebrow-text">ARCHITECTURE • INTERIORS • CONSTRUCTION</span>
           </div>
 
           {/* Headline: 2 clean editorial lines */}
@@ -250,35 +249,31 @@ export default function HeroSection() {
         .hero-brand-badge {
           display: inline-flex;
           align-items: center;
-          gap: 0.6rem;
-          background: rgba(13, 32, 56, 0.7);
-          border: 1px solid rgba(229, 174, 63, 0.3);
-          padding: 0.4rem 0.95rem;
+          gap: 0.55rem;
+          background: rgba(234, 175, 53, 0.08);
+          border: 1px solid rgba(234, 175, 53, 0.32);
+          padding: 0.45rem 1.15rem;
           border-radius: var(--radius-full);
           margin-bottom: 1.5rem;
           width: fit-content;
           backdrop-filter: blur(10px);
+          box-shadow: 0 4px 18px rgba(0, 0, 0, 0.25);
+          transition: all 0.25s ease;
         }
 
-        .hero-eyebrow {
-          font-family: var(--font-sans);
-          font-size: 0.78rem;
-          font-weight: 700;
-          letter-spacing: 2.2px;
-          color: #E5AE3F;
-        }
-
-        .hero-badge-sep {
-          color: rgba(229, 174, 63, 0.4);
-          font-size: 0.7rem;
-        }
-
-        .hero-category {
-          font-family: var(--font-sans);
+        .badge-sparkle-dot {
+          color: #EAAF35;
           font-size: 0.72rem;
-          font-weight: 600;
-          letter-spacing: 1.5px;
-          color: #B7C4D6;
+          line-height: 1;
+        }
+
+        .hero-eyebrow-text {
+          font-family: var(--font-sans);
+          font-size: 0.76rem;
+          font-weight: 700;
+          letter-spacing: 0.14em;
+          color: #EAAF35;
+          text-transform: uppercase;
         }
 
         .hero-headline {
@@ -569,7 +564,7 @@ export default function HeroSection() {
 
         @media (max-width: 900px) {
           .hero-split-root {
-            padding-top: 105px;
+            padding-top: 150px;
             padding-bottom: 50px;
           }
           .hero-split-container {
@@ -604,13 +599,15 @@ export default function HeroSection() {
             font-size: 0.98rem;
           }
           .hero-brand-badge {
-            flex-direction: column;
-            gap: 0.25rem;
-            border-radius: 12px;
-            padding: 0.5rem 0.85rem;
+            padding: 0.35rem 0.95rem;
+            margin-bottom: 1.25rem;
+            gap: 0.45rem;
+            border-radius: var(--radius-full);
           }
-          .hero-badge-sep {
-            display: none;
+          .hero-eyebrow-text {
+            font-size: 0.68rem;
+            letter-spacing: 0.1em;
+            white-space: nowrap;
           }
           .hero-actions-row {
             flex-direction: column;
@@ -633,6 +630,16 @@ export default function HeroSection() {
             flex-direction: column;
             gap: 0.75rem;
             align-items: center;
+          }
+        }
+
+        @media (max-width: 400px) {
+          .hero-split-root {
+            padding-top: 140px;
+          }
+          .hero-eyebrow-text {
+            font-size: 0.6rem;
+            letter-spacing: 0.08em;
           }
         }
       `}</style>
