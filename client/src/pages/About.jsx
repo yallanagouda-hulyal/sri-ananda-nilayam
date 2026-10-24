@@ -1628,8 +1628,14 @@ export default function About() {
             display: none;
           }
 
+          .process-cards-grid,
           .process-steps-grid {
             grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+          }
+
+          .process-connector-arrow {
+            display: none;
           }
         }
 
@@ -1751,6 +1757,53 @@ export default function About() {
             object-fit: cover;
             border-top: 2px solid #DDA52F;
           }
+
+          /* Process Section (<= 768px) */
+          .about-process-section {
+            padding: 4rem 1rem 4.5rem 1rem;
+          }
+
+          .process-header {
+            margin-bottom: 2.5rem;
+          }
+
+          .process-title {
+            font-size: 1.85rem;
+            line-height: 1.25;
+          }
+
+          .process-desc {
+            font-size: 0.94rem;
+          }
+
+          .process-desc-br {
+            display: none;
+          }
+
+          .process-cards-grid {
+            grid-template-columns: 1fr;
+            gap: 2.25rem;
+            max-width: 440px;
+            margin: 0 auto;
+          }
+
+          .process-card-image-wrap {
+            height: 200px;
+          }
+
+          .process-step-badge {
+            top: 200px;
+            width: 56px;
+            height: 56px;
+          }
+
+          .process-card-content {
+            padding: 2.6rem 1.4rem 1.75rem 1.4rem;
+          }
+
+          .process-card-title {
+            font-size: 1.25rem;
+          }
         }
 
         @media (max-width: 640px) {
@@ -1808,9 +1861,51 @@ export default function About() {
             font-size: 1.6rem;
           }
 
+          .process-cards-grid,
           .process-steps-grid {
             grid-template-columns: 1fr;
-            gap: 1.25rem;
+            gap: 2rem;
+            max-width: 100%;
+          }
+
+          .about-process-section {
+            padding: 3.25rem 0.75rem 3.5rem 0.75rem;
+          }
+
+          .process-title {
+            font-size: 1.55rem;
+          }
+
+          .process-card-image-wrap {
+            height: 185px;
+          }
+
+          .process-step-badge {
+            top: 185px;
+            width: 50px;
+            height: 50px;
+          }
+
+          .process-badge-num {
+            font-size: 0.68rem;
+          }
+
+          .process-card-content {
+            padding: 2.3rem 1.15rem 1.5rem 1.15rem;
+          }
+
+          .process-card-title {
+            font-size: 1.18rem;
+          }
+
+          .process-card-subtitle {
+            font-size: 0.82rem;
+            margin-bottom: 0.65rem;
+          }
+
+          .process-card-desc {
+            font-size: 0.84rem;
+            line-height: 1.55;
           }
         }
 
