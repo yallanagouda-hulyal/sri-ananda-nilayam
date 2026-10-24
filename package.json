@@ -1,0 +1,20 @@
+{
+  "name": "shri-ananda-nilayam",
+  "version": "1.0.0",
+  "description": "Premium MERN website for Shri Ananda Nilayam – Design | Construction | Interiors",
+  "private": true,
+  "scripts": {
+    "install:all": "npm install && cd client && npm install && cd ../server && npm install",
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "client": "cd client && npm run dev",
+    "server": "cd server && npm run dev",
+    "build": "cd client && npm run build",
+    "start": "cd server && npm start",
+    "seed": "cd server && node scripts/seed.js",
+    "create-admin": "cd server && node scripts/createAdmin.js",
+    "lint": "cd client && npm run lint"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}
